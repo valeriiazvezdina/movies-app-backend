@@ -1,17 +1,16 @@
-package com.zvezdval.movies_api;
+package com.zvezdval.movies_api.movie;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class MovieService {
 
-    @Autowired
-    private MovieRepository repository;
+    private final MovieRepository repository;
 
     public List<Movie> findAllMovies() {
         return repository.findAll();

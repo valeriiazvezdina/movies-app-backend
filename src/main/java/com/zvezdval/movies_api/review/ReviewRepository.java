@@ -1,4 +1,4 @@
-package com.zvezdval.movies_api;
+package com.zvezdval.movies_api.review;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;

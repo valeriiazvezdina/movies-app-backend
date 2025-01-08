@@ -1,21 +1,23 @@
-package com.zvezdval.movies_api;
+package com.zvezdval.movies_api.review;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.zvezdval.movies_api.movie.Movie;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class ReviewService {
-    @Autowired
-    private ReviewRepository reviewRepository;
 
-    @Autowired
-    private MongoTemplate mongoTemplate;
+    private final ReviewRepository reviewRepository;
+
+    private final MongoTemplate mongoTemplate;
 
     public Review createReview(String review, String imdbId) {
-        Review reviewObject = reviewRepository.insert(new Review(review));
+        Review newReview = Review.builder().body(review).build();
+        Review reviewObject = reviewRepository.insert(newReview);
 
         mongoTemplate.update(Movie.class)
                      .matching(Criteria.where("imdbId").is(imdbId))

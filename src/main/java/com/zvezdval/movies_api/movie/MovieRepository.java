@@ -1,4 +1,4 @@
-package com.zvezdval.movies_api;
+package com.zvezdval.movies_api.movie;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
