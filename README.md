@@ -1,3 +1,1 @@
-# Fullstack Movie app
-## Backend in Java
-## Frontend in React
+# Java backend for movie api application
