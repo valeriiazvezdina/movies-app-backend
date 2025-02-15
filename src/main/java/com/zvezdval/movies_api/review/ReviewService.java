@@ -7,6 +7,8 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class ReviewService {
@@ -25,5 +27,9 @@ public class ReviewService {
                      .first();
 
         return reviewObject;
+    }
+
+    public Optional<Review> findReviewByImdbId(String imdbId) {
+        return reviewRepository.findById(imdbId);
     }
 }

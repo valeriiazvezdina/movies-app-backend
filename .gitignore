@@ -39,3 +39,5 @@ mvnw
 mvnw.cmd
 .mvn
 .gitattributes
+
+.DS_Store
