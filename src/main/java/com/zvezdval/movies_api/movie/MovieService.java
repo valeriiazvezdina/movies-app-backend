@@ -10,12 +10,12 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class MovieService {
 
-    private final MovieRepository repository;
+    private final MovieRepository movieRepository;
 
     public List<Movie> findAllMovies() {
-        return repository.findAll();
+        return movieRepository.findAll();
     }
     public Optional<Movie> findMovieByImdbId(String imdbId) {
-        return repository.findMovieByImdbId(imdbId);
+        return movieRepository.findMovieByImdbId(imdbId);
     }
 }
