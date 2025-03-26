@@ -16,9 +16,4 @@ public class ReviewController {
     public ResponseEntity<Review> createReview(@RequestBody ReviewDto payload) {
         return new ResponseEntity<>(reviewService.createReview(payload.reviewBody(), payload.imdbId()), HttpStatus.CREATED);
     }
-
-//    @GetMapping
-//    public ResponseEntity<List<Review>> findAllReviewsByImdbId(@RequestParam String imdbId) {
-//
-//    }
 }
