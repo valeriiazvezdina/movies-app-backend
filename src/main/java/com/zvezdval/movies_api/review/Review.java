@@ -16,4 +16,5 @@ public class Review {
     @Id
     private String id;
     private String body;
+    private String imdbId;
 }

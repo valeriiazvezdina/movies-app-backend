@@ -5,9 +5,12 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Update;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
 
 @Service
 @RequiredArgsConstructor
@@ -31,5 +34,10 @@ public class ReviewService {
 
     public Optional<Review> findReviewByImdbId(String imdbId) {
         return reviewRepository.findById(imdbId);
+    }
+
+    @Async
+    public CompletableFuture<List<Review>> getReviewsByMovieAsync(String imdbId) {
+        return CompletableFuture.completedFuture(reviewRepository.findByImdbId(imdbId));
     }
 }
