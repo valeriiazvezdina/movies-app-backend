@@ -14,15 +14,15 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class MovieController {
 
-    private final MovieService service;
+    private final MovieService movieService;
 
     @GetMapping
     public ResponseEntity<List<Movie>> getMovies() {
-        return new ResponseEntity<>(service.findAllMovies(), HttpStatus.OK);
+        return new ResponseEntity<>(movieService.findAllMovies(), HttpStatus.OK);
     }
 
     @GetMapping("/{imdbId}")
     public ResponseEntity<Optional<Movie>> getSingleMovie(@PathVariable String imdbId){
-        return new ResponseEntity<>(service.findMovieByImdbId(imdbId), HttpStatus.OK);
+        return new ResponseEntity<>(movieService.findMovieByImdbId(imdbId), HttpStatus.OK);
     }
 }
