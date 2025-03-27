@@ -18,7 +18,7 @@ import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
 @RestController
-@RequestMapping("/api/v1/movie-details")
+@RequestMapping("/movie-details")
 public class MovieDetailsController {
 
     private final MovieService movieService;

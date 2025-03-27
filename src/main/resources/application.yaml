@@ -14,5 +14,5 @@ spring:
 
   data:
     mongodb:
-      database: movie-api-db
-      uri: mongodb+srv://valeriiazvezdina:TxYUG5OBQgFKX6wY@cluster0.4ylwo.mongodb.net
+      database: ${MONGO_DATABASE}
+      uri: ${MONGO_URI}

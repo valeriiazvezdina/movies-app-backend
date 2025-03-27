@@ -21,7 +21,7 @@ public class ReviewService {
     private final MongoTemplate mongoTemplate;
 
     public Review createReview(String review, String imdbId) {
-        Review newReview = Review.builder().body(review).build();
+        Review newReview = Review.builder().body(review).imdbId(imdbId).build();
         Review reviewObject = reviewRepository.insert(newReview);
 
         mongoTemplate.update(Movie.class)
