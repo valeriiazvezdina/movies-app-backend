@@ -45,6 +45,11 @@ This project is a Java-based backend for a movie API application. It provides va
 
 - `GET /api/movies` - Retrieve a list of movies
 - `GET /api/movies/{id}` - Get details of a specific movie
+- `POST /api/reviews` - Create a new review
+- `GET /api/users/me` - Get authentication details of current user
+- `POST /api/users/register` - Sign in
+- `POST /api/users/login` - Log in
+- `POST /api/users/logout` - Log out
 
 ## Contributing
 
